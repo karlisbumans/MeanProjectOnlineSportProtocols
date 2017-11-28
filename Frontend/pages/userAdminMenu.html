@@ -1,0 +1,12 @@
+<nav class="navbar navbar-default" >
+    <div class="container" ng-if="isUserLoggedIn()" >
+        <ul class="nav navbar-nav navbar-down">
+            <li><a href="#/createUser"><i class="fa fa-home" > Pievienot lietotāju </i> </a></li>
+            <li><a href="#/manageUsers"><i class="fa fa-home"> Pārvaldīt lietotājus </i> </a></li>
+            <li><a href="#/logout"><i class="fa fa-home"> Izlogoties </i> </a></li>
+        </ul>
+    </div>
+    <div ng-if="! isUserLoggedIn()">
+        Jums jāautentificējas, lai būtu pieejamas administrēšanas funkcijas
+    </div>
+</nav>

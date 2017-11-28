@@ -1,0 +1,22 @@
+<div  class="row"  ng-init="checkUserRights()">
+    <!-- <a href="#/createSport"><i class="fa fa-home"> Pievienot sporta veidu </i> </a>-->
+    <a href="" ng-click="addNewSport()" ><i class="fa fa-home"> Pievienot sporta veidu </i> </a>
+
+    <table border="1" ng-init="getSportList()" class="table table-striped">
+        <tr>
+            <th> Sporta veida nosaukums </th>
+            <th> periodu skaits </th>
+            <th> perioda ilgums (min) </th>
+            <th> </th>
+            <th> </th>
+        </tr>
+        <tr ng-repeat="u in sportlist">
+            <td>{{u.sport_name}}</td>
+            <td>{{u.period_count}}</td>
+            <td>{{u.period_length}}</td>
+            <td> <a href="" ng-click="deleteSport(u._id)"> Dzēst </a></td>
+            <td> <a href="" ng-click="editSport(u)"> Labot </a> </td>
+        </tr>
+    </table>
+</div>
+

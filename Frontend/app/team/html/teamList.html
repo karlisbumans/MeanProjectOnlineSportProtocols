@@ -1,0 +1,25 @@
+<div  class="row" ng-init="checkUserRights();getSportList()" >
+    Sporta veids:
+    <select name="sportSelect" id="sportSelect" ng-model="team.sport" >
+        <option ng-repeat="s in sportlist" value="{{s._id}}">{{s.sport_name}}</option>
+    </select>
+    <br/>
+
+    <a href="" ng-click="addNewTeam()" ><i class="fa fa-home"> Pievienot jaunu komandu </i> </a>
+
+    <table border="1" ng-init="getTeamList()" class="table table-striped">
+        <tr>
+            <th> Komandas nosaukums </th>
+            <th> Treneri </th>
+            <th> </th>
+            <th> </th>
+        </tr>
+        <tr ng-repeat="u in teamlist | filter:{sport: team.sport}:false">
+            <td>{{u.team_name}}</td>
+            <td>{{u.coaches}}</td>
+            <td> <a href="" ng-click="deleteTeam(u._id)"> Dzēst </a></td>
+            <td> <a href="" ng-click="editTeam(u)"> Labot </a> </td>
+        </tr>
+    </table>
+</div>
+

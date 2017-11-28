@@ -1,0 +1,19 @@
+
+    <table border="1" ng-init="checkUserRights();getUserList()" class="table table-striped">
+        <tr>
+            <th> Lietotājvārds </th>
+            <th> Vārds </th>
+            <th> Uzvārds </th>
+            <th> </th>
+            <th> </th>
+        </tr>
+        <tr ng-repeat="u in userlist.data">
+            <td>{{u.username}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.surname}}</td>
+            <td> <a href="" ng-click="deleteUser(u._id)"> Dzēst </a></td>
+            <td> <a href="" ng-click="editUser(u)"> Labot </a> </td>
+
+        </tr>
+    </table>
+

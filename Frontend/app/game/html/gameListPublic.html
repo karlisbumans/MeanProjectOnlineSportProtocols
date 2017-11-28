@@ -1,0 +1,39 @@
+<div class="row" ng-init="getGameList();getSportList();getTeamList()">
+    <div class="col-md-12">
+        <div class="panel panel-default" >
+            <div class="panel-heading">
+                <h3 class="panel-title">Spēļu saraksts:</h3>
+            </div>
+
+
+            Sporta veids:
+            <select name="sportSelect" id="sportSelect" ng-model="game.sport" ng-change="sportChange()">
+                <option ng-repeat="s in sportlist" value="{{s._id}}">{{s.sport_name}}</option>
+            </select>
+            <br/>
+
+
+            <table border="1"  class="table table-striped">
+                <tr>
+                    <th> Datums </th>
+                    <th> Mājnieki</th>
+                    <th colspan="2" > Rezultāts</th>
+                    <th> Viesi</th>
+                    <th> </th>
+                </tr>
+                <tr ng-repeat="u in gamelist | filter:{sport: game.sport}:false">
+                    <td>{{u.date}}</td>
+                    <td>{{getTeamName(u.team1)}}</td>
+                    <td>{{u.score1}}</td>
+                    <td>{{u.score2}}</td>
+                    <td>{{getTeamName(u.team2)}}</td>
+                    <td> <a href="" ng-click="watchGame(u)"> Skatīties </a> </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
